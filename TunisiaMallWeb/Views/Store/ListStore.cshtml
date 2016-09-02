@@ -1,0 +1,122 @@
+﻿@model IEnumerable<TunisiaMall.Domain.Entities.store>
+
+@{
+    ViewBag.Title = "ListStore";
+
+
+}
+
+<h2>Tunisia Mall Stores</h2>
+
+
+
+<br />
+<br/>
+
+<table class="table">
+    <tr>
+        <th>
+         
+        </th>
+        <th>
+            @Html.DisplayName("Store")
+        </th>
+        <th>
+            @Html.DisplayName("Description")
+        </th>
+
+        <th>
+            @Html.DisplayName("Status")
+        </th>
+       
+        <th>
+            @Html.DisplayName("Contact")
+        </th>
+        <th>
+            @Html.DisplayName("Category")
+        </th>
+        <th>
+            @Html.DisplayName("Virtual Visit")
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+
+@if (item.name == "zara")
+{
+
+    <img src="http://localhost/zara.jpg">
+}
+@if (item.name == "lufian")
+{
+
+    <img src="http://localhost/lufian.jpg">
+}@if (item.name == "benetton")
+{
+
+    <img src="http://localhost/benetton.jpg">
+}@if (item.name == "citysport")
+{
+
+    <img src="http://localhost/citysport.png">
+}@if (item.name == "samsung")
+{
+
+    <img src="http://localhost/samsung.jpg">
+}
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+       
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.category.libelle)
+        </td>
+        <td>
+            @if (item.name == "zara")
+            {
+              
+                <a href="http://localhost/zaraeeed.html">Visit me!</a>
+            }
+            @if (item.name == "lufian")
+            {
+                <a href="http://localhost/lufianvisit.html">Visit me!</a>
+            }
+            @if (item.name == "samsung")
+            {
+                <a href="http://localhost/samsung.html">Visit me!</a>
+            }
+            @if (item.name == "benetton")
+            {
+                <a href="http://localhost/benetton.html">Visit me!</a>
+            }
+            @if (item.name == "citysport")
+            {
+                <a href="http://localhost/citySport.html">Visit me!</a>
+            }
+        
+        </td>
+        <td>
+           
+            @Html.ActionLink("Details", "DetailStore", new {  id=item.idStroe }) 
+           
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,65 @@
+﻿@model TunisiaMall.Domain.Entities.gestbookentry
+
+@{
+    ViewBag.Title = "DeleteEntry";
+}
+<div align="center">
+    <h2>Delete Guestbook Entry</h2>
+
+    <h3>Are you sure you want to delete this guestbook entry?</h3>
+</div>
+<div >
+    <div align="center">
+        <h4>Guestbook Entry</h4>
+
+        <img src="http://localhost/entry2.png">
+    </div>
+    <hr />
+    <dl class="dl-horizontal">
+     
+
+        <dt>
+            @Html.DisplayName("Opinion")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.text)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Entry Date")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateEntrie)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Rating")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rating)
+        </dd>
+
+    
+
+        <dt>
+            @Html.DisplayName("Customer")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user.lastName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div align="center" class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "GetAllEntries")
+        </div>
+    }
+</div>

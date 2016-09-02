@@ -1,0 +1,29 @@
+﻿@model IEnumerable<TunisiaMall.Domain.Entities.orderline>
+
+@{
+    Layout = null;
+}
+
+   <li>
+    <a id="dropdownMenuCart" href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-shopping-cart fa-lg"></i>&nbsp;<span class="badge">@ViewBag.s</span></a>
+    <div aria-labelledby="dropdownMenuCart" class="dropdown-menu widget-box">
+        <div class="shopping_cart_dropdown">
+            <ul class="cart_list product_list_widget">
+                @if (Model != null) { 
+                foreach (var item in Model)
+                {
+                <li>
+                    <a href="@Url.Action("DeleteFromCart","Order",new { id=item.idProduct_fk})" class="delete"><i class="fa fa-close"></i></a><a href="#"><img alt="" src="@item.product.images.First().imagePath"><span>@item.product.libelle</span><br /><span>@("Quantity : "+item.qte)</span></a>
+                    <h5 class="quantity">@item.product.sellPrice</h5>
+                </li>
+                    }
+                }
+            </ul>
+            <div class="total">
+                <h6>Subtotal</h6><span>@ViewBag.total</span>
+            </div>
+            <div class="action-button"><a href="@Url.Action("Create","Order")" class="btn btn-dark btn-bordered btn-xs upper">View Cart</a><a href="@Url.Action("DeleteAllFromCart","Order",new { id = 0 })" class="btn btn-primary btn-xs upper">Delete All</a></div>
+        </div>
+    </div>
+</li>
+   

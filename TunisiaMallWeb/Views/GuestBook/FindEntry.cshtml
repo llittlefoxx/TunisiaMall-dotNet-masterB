@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TunisiaMall.Domain.Entities.gestbookentry>
+
+@{
+    ViewBag.Title = "FindEntry";
+}
+<div align="center">
+    <h2>Search Result</h2>
+
+    <img src="http://localhost/guestbook2.gif">
+</div>
+<table class="table">
+    <tr>
+
+        <th>
+
+        </th>
+
+        <th>
+            @Html.DisplayName("Opinion")
+        </th>
+        <th>
+            @Html.DisplayName("Rating")
+        </th>
+        <th>
+            @Html.DisplayName("Entry Date")
+        </th>
+        <th>
+            @Html.DisplayName("Customer")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+
+                <img src="http://localhost/entry2.png">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.text)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateEntrie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user.lastName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditEntry", new { id = item.idEntries }) |
+                @Html.ActionLink("Details", "DetailsEntry", new { id = item.idEntries }) |
+                @Html.ActionLink("Delete", "DeleteEntry", new { id = item.idEntries })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Back to List", "GetAllEntries")
+</div>

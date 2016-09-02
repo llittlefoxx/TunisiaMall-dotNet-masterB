@@ -1,0 +1,122 @@
+﻿@model TunisiaMall.Domain.Entities.order
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Order </h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h2> Products in your Cart :</h2>
+        <br />
+        <table class="table">
+            <tr>
+                <th>
+
+                </th>
+                <th>
+                    @Html.DisplayName("Libelle ")
+                </th>
+                <th>
+                    @Html.DisplayName("Quantity ")
+                </th>
+                <th>
+                    @Html.DisplayName("Unitary Price")
+                </th>
+                <th>
+                  
+                </th>
+            </tr>
+
+            @if (ViewBag.s > 0)
+                {
+                    foreach (var item in ViewBag.orLines)
+                    {
+
+
+            <tr>
+                <td>
+                    <img src="@item.product.images[0].imagePath" width="60" height="60" alt="Image" />
+                </td>
+                <td>
+                    @item.product.libelle
+                </td>
+                <td>
+                    @item.qte
+                </td>
+                <td>
+                    @item.product.sellPrice 
+                </td>
+                <td>
+                    @Html.ActionLink("Delete From Cart", "DeleteFromCart",new { id=item.idProduct_fk })
+                </td>
+            </tr>
+                }
+            }
+</table>
+        <br />
+        <br />
+        @if (ViewBag.points > 0) {
+            @("Estimated points gain  from order : " + ViewBag.points);
+        }
+         <hr />
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                >
+
+                <div class="form-group">
+                    @Html.Label("Total Cart", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.amountPayed, new { htmlAttributes = new { @class = "form-control", @Value = ViewBag.total, @readonly = true } })
+                        @Html.ValidationMessageFor(model => model.amountPayed, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.Label("Card Holder", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.cardHolder, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.cardHolder, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    @Html.Label("Order Status", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.orderStatus, new { htmlAttributes = new { @class = "form-control", @Value = ViewBag.orderstat, @readonly = true } })
+                        @Html.ValidationMessageFor(model => model.orderStatus, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Payment Status", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.statusPayment, new { htmlAttributes = new { @class = "form-control", @Value = ViewBag.StatusPayment, @readonly = true } })
+                        @Html.ValidationMessageFor(model => model.statusPayment, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default"  />
+                    </div>
+                </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

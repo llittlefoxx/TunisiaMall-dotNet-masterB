@@ -1,0 +1,60 @@
+﻿@model IEnumerable<TunisiaMall.Domain.Entities.product>
+
+@{
+    ViewBag.Title = "GetProductByPromotionStore";
+}
+
+<h2>Promotion Products By Store</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Product Name")
+        </th>
+        <th>
+            @Html.DisplayName("Buy Price")
+        </th>
+     
+        <th>
+            @Html.DisplayName("Expiration Date")
+        </th>
+        
+        <th>
+            @Html.DisplayName("Quantity")
+        </th>
+        <th>
+            @Html.DisplayName("Sell Price")
+        </th>
+      
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.libelle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.buyPrice)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.expDate)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.qte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sellPrice)
+        </td>
+        
+    </tr>
+}
+
+</table>
+<p>
+
+    @Html.ActionLink("Back to List", "ListPromotionnelStore")
+</p>

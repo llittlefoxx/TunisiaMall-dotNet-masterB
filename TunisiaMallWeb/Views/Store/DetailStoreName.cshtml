@@ -1,0 +1,70 @@
+﻿@model TunisiaMall.Domain.Entities.store
+
+@{
+    ViewBag.Title = "DetailStoreName";
+}
+
+<h2>Store Information</h2>
+
+<div>
+    <h4>Store</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+      
+
+        <dt>
+            @Html.DisplayNameFor(model => model.openingDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.openingDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category_fk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category_fk)
+        </dd>
+
+    
+
+    </dl>
+</div>
+<p>
+  
+    @Html.ActionLink("Back to List", "ListStore")
+</p>

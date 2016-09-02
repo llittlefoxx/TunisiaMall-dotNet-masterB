@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title - TunisiaMall</title>
+    <meta name="description" content="Home Page e-shop version">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory-->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7COpen+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/font-awesome.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/owl.carousel.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/owl.theme.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/slit-slider-style.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/slit-slider-custom.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/idangerous.swiper.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/yamm.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/animate.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/prettyPhoto.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/bootstrap-slider.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/device-mockups2.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/main.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/main-responsive.css")">
+    <link id="primary_color_scheme" rel="stylesheet" href="@Url.Content("~/Content/css/theme_meadow.css")">
+    <style>
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            background-color: #F5F5F5;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+            background-color: #555;
+        }
+    </style>
+    <script src="@Url.Content("~/Content/js/Vendor/modernizr.js")"></script>
+    <noscript>
+        <link rel="stylesheet" href="@Url.Content("~/Content/css/styleNoJs.css")">
+    </noscript>
+</head>
+<body>
+    <div id="load"></div>
+    <!--[if lt IE 9]>
+    <p class="browsehappy">You are using an strong outdated browser. <br>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="page">
+        <!-- Start Nav Section-->
+        <nav id="main-navigation" role="navigation" class="navbar navbar-fixed-top navbar-standard">
+            <a href="javascript:void(0)" class="search_button"><i class="fa fa-search"></i></a>
+            <form action="search.html" method="get" role="search" class="h_search_form">
+                <div class="container">
+                    <div class="h_search_form_wrapper">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-sm"><i class="fa fa-search fa-lg"></i></button>
+                            </span>
+                            <input type="text" placeholder="Search on site" class="form-control">
+                        </div>
+                        <div class="h_search_close"><a href="#"><i class="fa fa-times"></i></a></div>
+                    </div>
+                </div>
+            </form>
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle"><i class="fa fa-align-justify fa-lg"></i></button><a href="#" class="navbar-brand"><img src="@Url.Content("~/Content/images/logo-white.png")" alt="" class="logo-white"><img src="@Url.Content("~/Content/images/logo-dark.png")" alt="" class="logo-dark"></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right service-nav">
+                        @Html.Partial("_Login")
+                        <li>
+                            <a id="dropdownMenuCart" href="#" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-shopping-cart fa-lg"></i>&nbsp;<span class="badge">2</span></a>
+                            <div aria-labelledby="dropdownMenuCart" class="dropdown-menu widget-box">
+                                <div class="shopping_cart_dropdown">
+                                    <ul class="cart_list product_list_widget">
+                                        <li>
+                                            <a href="#" class="delete"><i class="fa fa-close"></i></a><a href="#"><img alt="" src="@Url.Content("~/Content/images/products/3.jpg")"><span>New Peace Baja</span></a>
+                                            <h5 class="quantity">45.00</h5>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="delete"><i class="fa fa-close"></i></a><a href="#"><img alt="" src="@Url.Content("~/Content/images/products/5.jpg")"><span>Sunny Tank Selected</span></a>
+                                            <h5 class="quantity">25.00</h5>
+                                        </li>
+                                    </ul>
+                    <button type="button" class="navbar-toggle"><i class="fa fa-close fa-lg"></i></button>
+                    <ul class="nav yamm navbar-nav navbar-left main-nav">
+                        <!-- istanzio un id univoco-->
+                        <li class="dropdown">
+                            <a href="@Url.Action("Index", "Home")" title="Home" id="menu_item_Home">Home</a>
+                        </li>
+                        <!-- istanzio un id univoco-->
+                        <li class="dropdown yamm-fw">
+                            <a href="#" title="Shop" data-toggle="dropdown" data-hover="dropdown" id="menu_item_Shop" data-ref="#" class="dropdown-toggle">Shop<span class="caret"></span></a>
+                            <ul aria-labelledby="menu_item_Shop" class="dropdown-menu">
+                                <li>
+                                    <div class="yamm-content">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h6 class="upper hidden-xs">Shop</h6>
+                                                <ul class="sep-top-xs widget widget-cat">
+                                                    <li class="cat-item"><a href="#" class="upper">Shop List</a></li>
+                                                    <li class="cat-item"><a href="#" class="upper">Shop category</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3 hidden-xs">
+                                                <h6 class="upper">Latest Shop Promotions</h6>
+                                                <ul class="sep-top-xs widget widget-media">
+                                                    <li class="media media-bordered">
+                                                        <a href="shop-product.html" class="pull-left"><img src="@Url.Content("~/Content/images/products/3.jpg")" alt="" class="media-object"></a>
+                                                        <div class="media-body">
+                                                            <small class="upper">Woman</small>
+                                                            <h6 class="media-heading"><a href="shop-product.html">New Peace Baja</a></h6>
+                                                            <div class="product-detail">
+                                                                <div class="price-shop">
+                                                                    <del>$19.00</del><ins>$15.00</ins>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="media media-bordered">
+                                                        <a href="shop-product.html" class="pull-left"><img src="@Url.Content("~/Content/images/products/5.jpg")" alt="" class="media-object"></a>
+                                                        <div class="media-body">
+                                                            <small class="upper">Man</small>
+                                                            <h6 class="media-heading"><a href="shop-product.html">Sunny Tank Selected</a></h6>
+                                                            <div class="product-detail">
+                                                                <div class="price-shop">
+                                                                    <del>$19.00</del><ins>$15.00</ins>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- istanzio un id univoco-->
+                        <li class="dropdown yamm-fw">
+                            <a href="#" title="Product" data-toggle="dropdown" data-hover="dropdown" id="menu_item_Shop" data-ref="#" class="dropdown-toggle">Product<span class="caret"></span></a>
+                            <ul aria-labelledby="menu_item_Shop" class="dropdown-menu">
+                                <li>
+                                    <div class="yamm-content">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h6 class="upper hidden-xs">Shop</h6>
+                                                <ul class="sep-top-xs widget widget-cat">
+                                                    <li class="cat-item active"><a href="home-3.html" class="upper">Shop Landing Page</a></li>
+                                                    <li class="cat-item"><a href="shop.html" class="upper">Shop category</a></li>
+                                                    <li class="cat-item"><a href="shop-sidebar-left.html" class="upper">Shop with left sidebar</a></li>
+                                                    <li class="cat-item"><a href="shop-sidebar-right.html" class="upper">Shop with right sidebar</a></li>
+                                                    <li class="cat-item"><a href="shop-product.html" class="upper">Shop product page</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3 hidden-xs">
+                                                <h6 class="upper">Latest products</h6>
+                                                <ul class="sep-top-xs widget widget-media">
+                                                    <li class="media media-bordered">
+                                                        <a href="shop-product.html" class="pull-left"><img src="@Url.Content("~/Content/images/products/3.jpg")" alt="" class="media-object"></a>
+                                                        <div class="media-body">
+                                                            <small class="upper">Woman</small>
+                                                            <h6 class="media-heading"><a href="shop-product.html">New Peace Baja</a></h6>
+                                                            <div class="product-detail">
+                                                                <div class="price-shop">
+                                                                    <del>$19.00</del><ins>$15.00</ins>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="media media-bordered">
+                                                        <a href="shop-product.html" class="pull-left"><img src="@Url.Content("~/Content/images/products/5.jpg")" alt="" class="media-object"></a>
+                                                        <div class="media-body">
+                                                            <small class="upper">Man</small>
+                                                            <h6 class="media-heading"><a href="shop-product.html">Sunny Tank Selected</a></h6>
+                                                            <div class="product-detail">
+                                                                <div class="price-shop">
+                                                                    <del>$19.00</del><ins>$15.00</ins>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3 hidden-xs">
+                                                <h6 class="upper">Shop Cart</h6>
+                                                <div class="sep-top-xs">
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                                    <p>Lorem Ipsum is simply dummy text.</p>
+                                                </div>
+                                                <div class="sep-top-xs"><a href="shop-cart.html" class="btn btn-dark btn-bordered btn-block"><i class="fa fa-shopping-cart"></i>&nbsp;view cart</a></div>
+                                            </div>
+                                            <div class="col-md-3 hidden-xs">
+                                                <h6 class="upper">Shop Checkout</h6>
+                                                <div class="sep-top-xs">
+                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                                    <ul class="list-inline sep-bottom-xs sep-top-xs">
+                                                        <li><i class="fa fa-google-wallet fa-3x"></i></li>
+                                                        <li><i class="fa fa-paypal fa-3x"></i></li>
+                                                        <li><i class="fa fa-cc-mastercard fa-3x"></i></li>
+                                                        <li><i class="fa fa-cc-visa fa-3x"></i></li>
+                                                    </ul>
+                                                </div><a href="shop-checkout.html" class="btn btn-primary btn-block">checkout</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- istanzio un id univoco-->
+                        <li class="dropdown">
+                            <a href="@Url.Action("Index", "Topic")" title="Forum" id="menu_item_Forum" data-ref="#">Forum</a>
+                        </li>
+                        <!-- istanzio un id univoco-->
+                        <li class="dropdown">
+                            <a href="#" title="Events" id="menu_item_Events">Events</a>
+                        </li>
+                        <!-- istanzio un id univoco-->
+                        <li class="dropdown">
+                            <a href="@Url.Action("GetProfile", "User")" title="Profile"  id="menu_item_Profile" >Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Start Header Section-->
+        <section class="demo-2">
+            <!-- Start slider-wrapper-->
+            <div id="slider" style="display:none;" class="sl-slider-wrapper">
+                <div class="sl-slider">
+                    <!-- start slide-->
+                    <div data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1" class="sl-slide">
+                        <div style="background: url(@Url.Content("~/Content/images/slide/1.jpg"));" class="sl-slide-inner">
+                            <div class="slide-container">
+                                <div class="slide-content text-center">
+                                    <h2 class="main-title">2015 Winter&nbsp;<span class="text-primary">collection</span></h2>
+                                    <blockquote>
+                                        <p>New Arrivals from $29,90</p><a class="btn btn-light btn-bordered btn-lg">Browse categories</a><a href="http://themeforest.net/item/ottavio-multipurpose-html5-bootstrap-template/9562624?ref=kleis" target="_blank" class="btn btn-primary btn-lg"><i class="fa fa-shopping-cart fa-lg"></i> Shop Now</a>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end slide-->
+                    <!-- start slide-->
+                    <div data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2" class="sl-slide">
+                        <div style="background: url(@Url.Content("~/Content/images/intro-home1.jpg"));" class="sl-slide-inner">
+                            <div class="slide-container">
+                                <div class="slide-content text-center">
+                                    <h2 class="main-title">Winter Sale&nbsp;<span class="text-primary">30% off</span></h2>
+                                    <blockquote>
+                                        <p>Exclusively on Ottavio</p><a class="btn btn-light btn-bordered btn-lg">Browse categories</a><a href="http://themeforest.net/item/ottavio-multipurpose-html5-bootstrap-template/9562624?ref=kleis" target="_blank" class="btn btn-primary btn-lg"><i class="fa fa-shopping-cart fa-lg"></i> Shop Now</a>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end slide-->
+                    <!-- start slide-->
+                    <div data-orientation="horizontal" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5" class="sl-slide">
+                        <div style="background: url(@Url.Content("~/Content/images/intro-home9.jpg"));" class="sl-slide-inner">
+                            <div class="slide-container">
+                                <div class="slide-content text-center">
+                                    <h2 class="main-title">Ottavio helps you&nbsp;<span class="text-primary">Sell anyting</span></h2>
+                                    <blockquote>
+                                        <p>Create your online store in minutes!</p><a class="btn btn-light btn-bordered btn-lg">Browse categories</a><a href="http://themeforest.net/item/ottavio-multipurpose-html5-bootstrap-template/9562624?ref=kleis" target="_blank" class="btn btn-primary btn-lg"><i class="fa fa-shopping-cart fa-lg"></i> Shop Now</a>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end slide-->
+                </div>
+                <!-- start slider navigation-->
+                <nav id="nav-arrows" class="nav-arrows"><span class="nav-arrow-prev">Previous</span><span class="nav-arrow-next">Next</span></nav>
+                <nav id="nav-dots" class="nav-dots"><span class="nav-dot-current"></span><span></span><span></span></nav>
+                <!-- end slider navigation-->
+            </div>
+            <!-- End slider-wrapper-->
+        </section>
+        <!-- End Header Section-->
+        @RenderBody()
+        <!-- Start Client section-->
+        <div>
+            <div class="container">
+                <div class="owl-carousel owl-theme">
+                    <div class="item sep-top-lg"><img src="@Url.Content("~/Content/images/clients/1.png")" alt="" class="img-responsive"></div>
+                    <div class="item sep-top-lg"><img src="@Url.Content("~/Content/images/clients/2.png")" alt="" class="img-responsive"></div>
+                    <div class="item sep-top-lg"><img src="@Url.Content("~/Content/images/clients/3.png")" alt="" class="img-responsive"></div>
+                    <div class="item sep-top-lg"><img src="@Url.Content("~/Content/images/clients/4.png")" alt="" class="img-responsive"></div>
+                    <div class="item sep-top-lg"><img src="@Url.Content("~/Content/images/clients/5.png")" alt="" class="img-responsive"></div>
+                    <div class="item sep-top-lg"><img src="@Url.Content("~/Content/images/clients/6.png")" alt="" class="img-responsive"></div>
+                    <div class="item sep-top-lg"><img src="@Url.Content("~/Content/images/clients/7.png")" alt="" class="img-responsive"></div>
+                    <div class="item sep-top-lg"><img src="@Url.Content("~/Content/images/clients/8.png")" alt="" class="img-responsive"></div>
+                    <div class="item sep-top-lg"><img src="@Url.Content("~/Content/images/clients/9.png")" alt="" class="img-responsive"></div>
+                </div>
+            </div>
+        </div>
+        <!-- End Client section-->
+        <div class="sep-top-2x">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="text-center">
+                            <p class="lead">Nowadays, everybody wants an online shop. With The Company, this won’t be a problem. We made sure that WooCommerce is fully integrated in the design of The Company.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center">
+                            <img alt="" src="@Url.Content("~/Content/images/card.png")" class="sep-top-sm img-responsive">
+                            <ul class="shop-info-link sep-top-2x sep-bottom-lg">
+                                <li class="sep-bottom-sm"><a href="http://themeforest.net/item/ottavio-multipurpose-html5-bootstrap-template/9562624?ref=kleis" target="_blank">Shipping &amp; Returns</a></li>
+                                <li class="sep-bottom-sm"><a href="http://themeforest.net/item/ottavio-multipurpose-html5-bootstrap-template/9562624?ref=kleis" target="_blank">Delivery Information</a></li>
+                                <li class="sep-bottom-sm"><a href="http://themeforest.net/item/ottavio-multipurpose-html5-bootstrap-template/9562624?ref=kleis" target="_blank">Privacy Policy</a></li>
+                                <li class="sep-bottom-sm"><a href="http://themeforest.net/item/ottavio-multipurpose-html5-bootstrap-template/9562624?ref=kleis" target="_blank">Terms &amp; Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start Footer section-->
+        <footer id="footer">
+            <div class="inner sep-bottom-md">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="widget sep-top-lg">
+                                <img src="@Url.Content("~/Content/images/logo-white.png")" alt="" class="logo"><small class="sep-top-xs sep-bottom-md">Dolor church-key veniam, fap Bushwick mumblecore irure Vice consectetur 3 wolf moon sapiente literally quinoa.</small>
+                                <h6 class="upper widget-title">Stay connected</h6>
+                                <ul class="social-icon sep-top-xs">
+                                    <li><a href="#" class="fa fa-github fa-lg"></a></li>
+                                    <li><a href="#" class="fa fa-twitter fa-lg"></a></li>
+                                    <li><a href="#" class="fa fa-facebook fa-lg"></a></li>
+                                    <li><a href="#" class="fa fa-google-plus fa-lg"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="widget sep-top-lg">
+                                <h6 class="upper widget-title">Latest blog post</h6>
+                                <ul class="widget-post sep-top-xs">
+                                    <li><span class="date-post">17<small class="upper">apr</small></span><a href="blog-detail.html" class="title-post">Jheni and Alessandra on the road</a><small><a href="blog-detail.html#comments">5 comment</a></small></li>
+                                    <li><span class="date-post">17<small class="upper">apr</small></span><a href="blog-detail.html" class="title-post">Donec Suscipit Dim Euismods</a><small><a href="blog-detail.html#comments">5 comment</a></small></li>
+                                    <li><span class="date-post">17<small class="upper">apr</small></span><a href="blog-detail.html" class="title-post">How Videos can help promote your business</a><small><a href="blog-detail.html#comments">5 comment</a></small></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="widget sep-top-lg">
+                                <h6 class="upper widget-title">Visit Us</h6>
+                                <ul class="widget-address sep-top-xs">
+                                    <li><i class="fa fa-map-marker fa-lg"></i><small>Elizabeth St, Melbourne, Victoria<br>3000, Australia</small></li>
+                                    <li><i class="fa fa-phone fa-lg"></i><small>(+39) 123-456-789 /<br>(+39) 123-456-789</small></li>
+                                    <li><i class="fa fa-envelope fa-lg"></i><small><a href="#">info@ottaviostudios.com /</a><br><a href="#">support@ottaviostudios.com</a></small></li>
+                                    <li><i class="fa fa-clock-o fa-lg"></i><small>Mon / Friday<br>09:00 - 13.00 / 14:00 - 18:00</small></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="widget sep-top-lg">
+                                <h6 class="upper widget-title">Flickr Photostream</h6>
+                                <div class="flickr_container sep-top-xs">
+                                    <div id="flickr_badge_image1" class="flickr_badge_image"><a href="http://www.flickr.com/photos/we-are-envato/14983708011/"><img width="75" height="75" title="Collis does the ice bucket challenge" alt="Una foto su Flickr" src="http://farm4.staticflickr.com/3923/14983708011_6bcbba0e2c_s.jpg" )"></a></div>
+                                    <div id="flickr_badge_image2" class="flickr_badge_image"><a href="http://www.flickr.com/photos/we-are-envato/14596923138/"><img width="75" height="75" title="Justin 05" alt="Una foto su Flickr" src="http://farm6.staticflickr.com/5555/14596923138_d4d46d271c_s.jpg" )"></a></div>
+                                    <div id="flickr_badge_image3" class="flickr_badge_image"><a href="http://www.flickr.com/photos/we-are-envato/14760569666/"><img width="75" height="75" title="Justin 04" alt="Una foto su Flickr" src="http://farm4.staticflickr.com/3909/14760569666_7c6c02da27_s.jpg" )"></a></div>
+                                    <div id="flickr_badge_image4" class="flickr_badge_image"><a href="http://www.flickr.com/photos/we-are-envato/14783568265/"><img width="75" height="75" title="Justin 03" alt="Una foto su Flickr" src="http://farm6.staticflickr.com/5590/14783568265_90657d440f_s.jpg" )"></a></div>
+                                    <div id="flickr_badge_image5" class="flickr_badge_image"><a href="http://www.flickr.com/photos/we-are-envato/14781214704/"><img width="75" height="75" title="Justin 01" alt="Una foto su Flickr" src="http://farm3.staticflickr.com/2925/14781214704_955df76638_s.jpg" )"></a></div>
+                                    <div id="flickr_badge_image6" class="flickr_badge_image"><a href="http://www.flickr.com/photos/we-are-envato/14471910420/"><img width="75" height="75" title="Envato Live" alt="Una foto su Flickr" src="http://farm6.staticflickr.com/5548/14471910420_cf12dd0a16_s.jpg" )"></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright sep-top-xs sep-bottom-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12"><small>Copyright 2014 © Kleis Communication Technologies srl. All rights reserved.</small></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer section-->
+        <div id="back_to_top"><a href="#" class="fa fa-arrow-up fa-lg"></a></div>
+    </div>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/queryloader2.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/owl.carousel.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.ba-cond.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.slitslider.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/idangerous.swiper.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.fitvids.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.countTo.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/TweenMax.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/ScrollToPlugin.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.scrollmagic.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.easypiechart.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.validate.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/wow.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.placeholder.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.easing.1.3.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.waitforimages.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.prettyPhoto.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/imagesloaded.pkgd.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/isotope.pkgd.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.fillparent.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/raphael-min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/bootstrap.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/jquery.bootstrap-touchspin.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/bootstrap-slider.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/bootstrap-rating-input.js")"></script>
+    <script src="@Url.Content("~/Content/js/vendor/bootstrap-hover-dropdown.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/jquery.gmap.min.js")"></script>
+    <script src="@Url.Content("~/Content/js/circle_diagram.js")"></script>
+    <script src="@Url.Content("~/Content/js/main.js")"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'XX-XXXXXXXX-XX', 'auto');
+      ga('send', 'pageview');
+    </script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

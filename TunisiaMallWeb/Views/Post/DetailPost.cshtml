@@ -1,0 +1,70 @@
+﻿@model TunisiaMall.Domain.Entities.post
+
+@{
+    ViewBag.Title = "DetailPost";
+}
+
+<h2>DetailPost</h2>
+
+<div>
+    <h4>post</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idPost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idPost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idUser)
+        </dd>
+
+    </dl>
+</div>
+@Html.Partial("GetComments", Model.comments)
+
+<form action="@Url.Action("Create", "Comment")" method="post">
+    <textarea name="text"></textarea>
+    <input type="hidden" name="idPost" value="@Model.idPost"/>
+    <button type="submit">Reply</button>
+</form>
+

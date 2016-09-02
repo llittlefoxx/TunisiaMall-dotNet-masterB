@@ -1,0 +1,54 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<TunisiaMall.Domain.Entities.post>
+
+@{
+    ViewBag.Title = "Forum";
+}
+
+<h2>Index</h2>
+
+@if (Request.IsAuthenticated)
+{
+<p>
+    @Html.ActionLink("New Post", "Create", new { idTopic = ViewBag.idTopic })
+</p>
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Post Date
+        </th>
+        <th>
+            Posted By
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.title, "DetailPost", new { id = item.idPost })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.postDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user.login)
+            </td>
+            @if (item.idUser == ViewBag.idUser)
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.idPost }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.idPost })
+                </td>
+            }
+
+        </tr>
+    }
+
+</table>

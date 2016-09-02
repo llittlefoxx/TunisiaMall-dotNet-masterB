@@ -1,0 +1,43 @@
+﻿@model IEnumerable<TunisiaMall.Domain.Entities.subcategory>
+
+@{
+    ViewBag.Title = "GetAllSubCategoriesByCategory";
+}
+
+<h2>Tunisia Mall SubCategories ByCategory</h2>
+
+<br /> 
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("SubCategory Name")
+        </th>
+        <th>
+            @Html.DisplayName("SubCategory Description")
+        </th>
+      
+      
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.libelle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+      
+      
+        <td>
+           
+           
+          
+        </td>
+    </tr>
+}
+
+</table>

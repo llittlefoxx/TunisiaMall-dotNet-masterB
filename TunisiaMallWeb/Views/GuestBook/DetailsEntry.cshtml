@@ -1,0 +1,58 @@
+﻿@model TunisiaMall.Domain.Entities.gestbookentry
+
+@{
+    ViewBag.Title = "DetailsEntry";
+}
+
+
+
+<div>
+    <div align="center">
+        <h2>Guestbook Entry </h2>
+        <h4>Details</h4>
+        <img src="http://localhost/entry2.png">
+    </div>
+    <hr />
+    <dl class="dl-horizontal">
+     
+
+     
+
+        <dt>
+            @Html.DisplayName("Entry Date")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateEntrie)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Rating")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Opinion")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.text)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Customer Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user.lastName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditEntry", new {  id = Model.idEntries}) |
+    @Html.ActionLink("Back to List", "GetAllEntries")
+</p>

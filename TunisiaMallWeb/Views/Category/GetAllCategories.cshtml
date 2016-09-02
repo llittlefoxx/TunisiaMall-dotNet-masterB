@@ -1,0 +1,47 @@
+﻿@model IEnumerable<TunisiaMall.Domain.Entities.category>
+
+<h2>Tunisia Mall Categories </h2>
+
+<br />
+
+
+
+<script>
+    function ddListChange() {
+        // var selid = $("#myOption option:selected").attr("data-value");
+        var selected = $("#myOption option:selected").text();
+       // alert(selected);
+        window.location.href = 'http://localhost:30257/ListStoreByCategory/' + selected;
+    }
+</script>
+
+<div class="col-md-2">
+
+    <div class="form-group">
+
+
+        <select id="myOption" class="form-control input-lg rounded primary" onchange="ddListChange()">
+            <option value="">Category…</option>
+            @foreach (var item in Model)
+            {
+
+                <option data-value="@item.idCategory">@item.libelle</option>
+               
+            }
+        </select>
+
+       
+
+        @Html.ActionLink("Stores", "../ListStoreByCategory", new { categoryName = "" }) |
+
+    </div>
+
+</div>
+<br />
+<br />
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+

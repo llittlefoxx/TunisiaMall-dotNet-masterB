@@ -1,0 +1,60 @@
+﻿@model IEnumerable<TunisiaMall.Domain.Entities.message>
+
+@{
+    ViewBag.Title = "Inbox";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idMessage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idUserReciver_fk)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idUserSender_FK)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idMessage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idUserReciver_fk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idUserSender_FK)
+            </td>
+            <td>
+                @Html.ActionLink("View Conversation", "Discussion", new { idUser = item.idUserSender_FK }) |
+                @using (Html.BeginForm(@Html.BeginForm("Delete", "Message", new { idUser = item.idUserSender_FK })))
+                {
+                    <button>Delete</button>
+                }
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<TunisiaMall.Domain.Entities.store>
+
+@{
+    ViewBag.Title = "ListStoreByCategory";
+}
+
+<h2>Tunisia Mall Stores By Category</h2>
+
+
+
+
+<table class="table">
+    <tr>
+      <th>
+
+      </th>
+        <th>
+            @Html.DisplayName("Store")
+        </th>
+        <th>
+            @Html.DisplayName("Description")
+        </th>
+
+        <th>
+            @Html.DisplayName("Status")
+        </th>
+        <th>
+            @Html.DisplayName("Openning day")
+        </th>
+        <th>
+            @Html.DisplayName("Contact")
+        </th>
+ 
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    
+    <tr>
+        <td>
+
+            @if (item.name == "zara")
+            {
+
+                <img src="http://localhost/zara.jpg">
+            }
+            @if (item.name == "lufian")
+            {
+
+                <img src="http://localhost/lufian.jpg">
+            }@if (item.name == "benetton")
+            {
+
+                <img src="http://localhost/benetton.jpg">
+            }@if (item.name == "citysport")
+            {
+
+                <img src="http://localhost/citysport.png">
+            }@if (item.name == "samsung")
+            {
+
+                <img src="http://localhost/samsung.jpg">
+            }
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.openingDay)
+        </td>
+     
+        <td>
+            @Html.DisplayFor(modelItem => item.tel)
+        </td>
+       
+       
+        <td>
+          @Html.ActionLink("Details", "DetailStore", new { id = item.idStroe }) 
+        </td>
+    </tr>
+}
+
+</table>
+<p>
+
+    @Html.ActionLink("Back to List", "../GetAllCategories")
+</p>

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<TunisiaMall.Domain.Entities.product>
+
+@{
+    ViewBag.Title = "Product List";
+}
+
+<h2>Product List</h2>
+@using (Html.BeginForm())
+{ <table>
+        <tr>
+            <td>
+                <div>
+                    Search by Libelle: @Html.TextBox("searchString")
+                </div>
+            </td>
+            <td> <input type="submit" value="Search" id="submit" /> </td>
+        </tr>
+    </table> }
+
+<table class="table">
+    <tr>
+        <th>
+           
+        </th>
+        <th>
+            @Html.DisplayName("Name ")
+        </th>
+        <th>
+            @Html.DisplayName("Price")
+        </th>
+
+        <th>
+            @Html.DisplayName("Av. quantity")
+        </th>
+        <th>
+            @Html.DisplayName("State")
+        </th>
+        
+        <th>
+            @Html.DisplayName("Promotion")
+        </th>
+        <th>
+            @Html.DisplayName("Store")
+        </th>
+        <th>
+            @Html.DisplayName("Category")
+        </th>
+        <th>
+            @Html.DisplayName("Sub Category")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@item.images.First().imagePath" width="60" height="60" alt="Image" /> 
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.libelle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sellPrice)
+           
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.state)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.promotion.name)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.store.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subcategory.category.libelle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.subcategory.libelle)
+        </td>
+        <td>
+            @Html.ActionLink("Add to cart", "AddToCart", new { id=item.idProduct }) |
+            @Html.ActionLink("Details", "Details", new {id=item.idProduct }) 
+            
+        </td>
+    </tr>
+}
+
+</table>

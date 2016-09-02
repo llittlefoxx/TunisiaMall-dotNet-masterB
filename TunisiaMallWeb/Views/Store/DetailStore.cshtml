@@ -1,0 +1,126 @@
+﻿@model TunisiaMall.Domain.Entities.store
+
+@{
+    ViewBag.Title = "DetailStore";
+}
+
+<h2>Store Information</h2>
+
+<div>
+    <h4>Store</h4>
+
+
+    <div>
+
+        @if (Model.name == "zara")
+        {
+
+            <img src="http://localhost/zara.jpg">
+        }
+        @if (Model.name == "lufian")
+        {
+
+            <img src="http://localhost/lufian.jpg">
+        }@if (Model.name == "benetton")
+        {
+
+            <img src="http://localhost/benetton.jpg">
+        }@if (Model.name == "citysport")
+        {
+
+            <img src="http://localhost/citysport.png">
+        }@if (Model.name == "samsung")
+        {
+
+            <img src="http://localhost/samsung.jpg">
+        }
+
+    </div>
+    <hr />
+    <dl class="dl-horizontal">
+     
+        <dt>
+            @Html.DisplayName("Store")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+        <dt>
+            @Html.DisplayName("Description")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+      
+
+        <dt>
+            @Html.DisplayName("Openning day")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.openingDay)
+        </dd>
+
+        <dt>
+           @Html.DisplayName("Status")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Contact")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Category")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category.libelle)
+        </dd>
+        <dt>
+            @Html.DisplayName("Virtual Visit")
+        </dt>
+        <dd>
+
+            @if (Model.name == "zara")
+            {
+
+                <a href="http://localhost/zaraeeed.html">Visit me!</a>
+            }
+            @if (Model.name == "lufian")
+            {
+                <a href="http://localhost/lufianvisit.html">Visit me!</a>
+            }
+            @if (Model.name == "samsung")
+            {
+                <a href="http://localhost/samsung.html">Visit me!</a>
+            }
+            @if (Model.name == "benetton")
+            {
+                <a href="http://localhost/benetton.html">Visit me!</a>
+            }
+            @if (Model.name == "citysport")
+            {
+                <a href="http://localhost/citySport.html">Visit me!</a>
+            }
+
+        </dd>
+
+   
+
+    </dl>
+</div>
+<p>
+    
+    @Html.ActionLink("Back to List", "ListStore")
+</p>

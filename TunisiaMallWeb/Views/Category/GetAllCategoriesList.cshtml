@@ -1,0 +1,54 @@
+﻿@model IEnumerable<TunisiaMall.Domain.Entities.category>
+
+@{
+    ViewBag.Title = "GetAllCategoriesList";
+}
+
+<h2>Tunisia Mall Categories</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+           
+        </th>
+        <th>
+            @Html.DisplayName("Category Name")
+        </th>
+      
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            
+            @if (item.libelle == "Electronics")
+            {
+
+                <img src="http://localhost/electronics.jpg">
+            }
+            @if (item.libelle == "Clothing")
+            {
+
+                <img src="http://localhost/clothing.jpg">
+            }@if (item.libelle == "Cosmetics")
+            {
+
+                <img src="http://localhost/cosmetics.jpg">
+            }
+
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.libelle)
+        </td>
+        <td>
+           
+            @Html.ActionLink("Details", "GetCategoryDetail", new {  id=item.idCategory }) 
+            
+        </td>
+    </tr>
+}
+
+</table>

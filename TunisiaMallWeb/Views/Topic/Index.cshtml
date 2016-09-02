@@ -1,0 +1,18 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<TunisiaMall.Domain.Entities.topic>
+
+@{
+    ViewBag.Title = "Forum";
+}
+
+<h2>Topics</h2>
+
+
+
+
+@foreach (var item in Model)
+{
+
+    <h2>@Html.ActionLink(item.title, "Index", "Post", new { idTopic = item.idTopic }, null)</h2>
+
+}

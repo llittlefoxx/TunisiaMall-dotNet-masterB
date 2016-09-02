@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNet.Identity
+
+@if (Request.IsAuthenticated)
+{
+    <li>
+        <a id="LogOutMenu" href="@Url.Action("Logout", "User")"><i class="fa fa-sign-out fa-lg"></i> Logout</a>
+    </li>
+    <li>
+        <a id="InboxMenu" href="@Url.Action("Index", "Message")"><i class="fa fa-inbox fa-lg"></i> Inbox</a>
+    </li>
+}
+else
+{
+    <li>
+        <a id="InboxMenu" href="@Url.Action("UserCreate", "User")"><i class="fa fa-inbox fa-lg"></i> Sign Up</a>
+    </li>
+    <li>
+        <a id="dropdownMenuLogin" href="#" data-toggle="dropdown" class="upper dropdown-toggle"><i class="fa fa-sign-in fa-lg"></i> Login</a>
+        <div aria-labelledby="dropdownMenuLogin" class="dropdown-menu widget-box">
+            <form action="@Url.Action("Login", "User")" method="post">
+                <div class="form-group">
+                    <label class="sr-only">Username</label>
+                    <input type="text" value="" placeholder="Username" name="username" class="form-control input-lg">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only">Password</label>
+                    <input type="password" value="" placeholder="Password" name="password" class="form-control input-lg">
+                </div>
+                <div class="form-inline form-group">
+                    <button type="submit" class="btn btn-primary btn-xs">Login</button>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"><small> Remember me</small>
+                        </label>
+                    </div>
+                </div><a href="#"><small>Lost your Password?</small></a>
+            </form>
+        </div>
+    </li>
+}
+

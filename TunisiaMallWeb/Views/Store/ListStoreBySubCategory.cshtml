@@ -1,0 +1,68 @@
+﻿@model IEnumerable<TunisiaMall.Domain.Entities.store>
+
+@{
+    ViewBag.Title = "ListStoreBySubCategory";
+}
+
+<h2>List Stores By SubCategory</h2>
+
+
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.openingDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel)
+        </th>
+        <th>
+            @Html.Display("Category")
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.openingDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.category.libelle)
+        </td>
+       
+        <td>
+           @Html.ActionLink("Details", "DetailStore", new { id = item.idStroe }) 
+        </td>
+    </tr>
+}
+
+</table>
+
+<p>
+
+    @Html.ActionLink("Back to List", "ListStore")
+</p>

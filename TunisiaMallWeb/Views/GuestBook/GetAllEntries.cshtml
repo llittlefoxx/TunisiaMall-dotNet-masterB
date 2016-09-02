@@ -1,0 +1,111 @@
+﻿@model IEnumerable<TunisiaMall.Domain.Entities.gestbookentry>
+
+@{
+    ViewBag.Title = "GetAllEntries";
+}
+
+
+<div align="center">
+    <img src="http://localhost/guestbook.png" align="middle">
+</div>
+
+<div>
+
+    <img src="http://localhost/guestbook.jpg">
+</div>
+<script>
+    function ddListChange() {
+        // var selected = $("#myOption option:selected").attr("data-value");
+        var selected = $("#hh").val();
+        alert(selected);
+        window.location.href = 'http://localhost:30257/FindGuestBookEntry/' + selected;
+    }
+</script>
+
+<h4>Search</h4>
+<p>
+
+    @using (Html.BeginForm("Search", "Home", FormMethod.Post, new { id = "searchForm" }))
+    {
+        <div id="search">
+
+            <div id="searchtxt">
+                <input type="text" value="" id="hh" />  <button type="button" value="Search" onclick="ddListChange()">Search</button>
+                
+            </div>
+            
+    
+            </div>
+        
+    }
+
+
+
+</p>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+           
+
+
+            @Html.ActionLink("Create New", "CreateGuestBookEntry")
+        </th>
+    </tr>
+   
+    </table>
+
+
+<table class="table">
+        <tr>
+
+
+            <th>
+               
+            </th>
+            <th>
+                @Html.DisplayName("Opinion")
+            </th>
+            <th>
+                @Html.DisplayName("Rating")
+            </th>
+            <th>
+                @Html.DisplayName("Entry Date")
+            </th>
+            <th>
+                @Html.DisplayName("Customer")
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+
+                    <img src="http://localhost/entry2.png">
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.text)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.rating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dateEntrie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.user.lastName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditEntry", new { id = item.idEntries }) |
+                    @Html.ActionLink("Details", "DetailsEntry", new { id = item.idEntries }) |
+                    @Html.ActionLink("Delete", "DeleteEntry", new { id = item.idEntries })
+                </td>
+            </tr>
+        }
+
+    </table>
